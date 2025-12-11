@@ -31,7 +31,7 @@ int main(void) {
     /*Game start*/
     while (gameRun){
         char move[2];
-        gets(move);
+        fgets(move, 2, stdin);
 
         position = getNewPosition(position, *move);
         energy = energy - getEnergyCost(*move);
