@@ -19,9 +19,7 @@ int main(void) {
     scanf("%d", &n);
     int records[n][3];
 
-    scanf("%d %d %d", &records[0][DIFFICULTY], &records[0][SUCCESS], &records[0][TIME]);
-
-    for (int i = 1; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         /*[difficulty] [success] [time]*/
         scanf("%d %d %d", &records[i][DIFFICULTY], &records[i][SUCCESS], &records[i][TIME]);
     }
@@ -37,7 +35,7 @@ int check(int records[][3], int counter) {
     int avg_difficulty = 0;
     int running_time_rate = 0, success_rate = 0;
 
-    for (int i = 0; i < counter; i++) {
+    for (int i = 1; i < counter; i++) {
         if (records[i][TIME] > records[i-1][TIME]) {
             running_time_rate = IMPROVING;
         }
